@@ -1,0 +1,84 @@
+<div class="section">
+  <h3>创建预约</h3>
+  <p class="subtitle">司机填写信息，提交后自动生成预约编号</p>
+</div>
+
+<div class="mockup" style="max-width: 380px; margin: 0 auto;">
+  <div class="mockup-header" style="background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem;">
+    <span>&larr; 返回</span>
+    <span style="font-weight: 600;">创建预约</span>
+    <span style="visibility: hidden;">占位</span>
+  </div>
+  <div class="mockup-body" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+
+    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+      <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">驾驶员姓名</label>
+      <input class="mock-input" placeholder="请输入姓名" style="width: 100%;">
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+      <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">手机号</label>
+      <input class="mock-input" placeholder="请输入手机号" style="width: 100%;">
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+      <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">车牌号</label>
+      <input class="mock-input" placeholder="例如：辽A12345" style="width: 100%;">
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+      <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">粮食品种</label>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <div style="padding: 0.4rem 0.75rem; border: 1px solid var(--color-primary); border-radius: var(--radius-md); background: var(--color-primary); color: white; font-size: 0.8rem; cursor: pointer;">中科发5</div>
+        <div style="padding: 0.4rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.8rem; cursor: pointer;">吉宏6</div>
+        <div style="padding: 0.4rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.8rem; cursor: pointer;">鲜食玉米</div>
+        <div style="padding: 0.4rem 0.75rem; border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.8rem; cursor: pointer;">杂粮</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 0.75rem;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 0.25rem;">
+        <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">日期</label>
+        <input class="mock-input" placeholder="2026-05-22" style="width: 100%;">
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 0.25rem;">
+        <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">时间</label>
+        <input class="mock-input" placeholder="09:00" style="width: 100%;">
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+      <label style="font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 600;">备注</label>
+      <textarea class="mock-input" placeholder="选填，如特殊要求" style="width: 100%; min-height: 3rem; resize: none;"></textarea>
+    </div>
+
+    <button class="mock-button" style="width: 100%; padding: 0.75rem; background: var(--color-primary); color: white; border: none; border-radius: var(--radius-md); font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem;">
+      提交预约
+    </button>
+
+  </div>
+  <div class="mockup-footer" style="display: flex; border-top: 1px solid var(--color-border);">
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: var(--color-primary); font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128197;</div>
+      预约
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: var(--color-text-secondary); font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128269;</div>
+      查询
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: var(--color-text-secondary); font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128260;</div>
+      排队
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 品种用标签选择器（非下拉），减少手机操作步数<br>
+    &bull; 日期/时间用文本输入快速填写，后续可升级为 picker<br>
+    &bull; 大按钮便于单手操作<br>
+    &bull; 提交成功后跳转到预约详情页，显示预约编号
+  </p>
+</div>

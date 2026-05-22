@@ -1,0 +1,163 @@
+<div class="section">
+  <h3>预约列表（操作员/管理者PC）</h3>
+  <p class="subtitle">桌面端侧边栏布局，管理所有预约记录</p>
+</div>
+
+<div class="mockup" style="max-width: 900px; margin: 0 auto; background: #fefbfb; border-radius: var(--radius-lg); overflow: hidden; display: flex; min-height: 500px;">
+
+  <!-- 侧边栏 -->
+  <div style="width: 200px; background: #FF6600; color: white; display: flex; flex-direction: column; flex-shrink: 0;">
+    <div style="padding: 1rem; font-size: 1rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.15);">
+      好雨粮库
+    </div>
+    <div style="flex: 1; padding: 0.5rem 0;">
+      <div style="padding: 0.6rem 1rem; background: rgba(255,255,255,0.15); font-size: 0.85rem; font-weight: 600; border-left: 3px solid white;">预约列表</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">排队看板</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">扦样录入</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">数据看板</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">用户管理</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.8rem; cursor: pointer;">
+      退出登录
+    </div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div style="flex: 1; display: flex; flex-direction: column; background: #fefbfb;">
+
+    <!-- 顶部栏 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: white; border-bottom: 1px solid #eee;">
+      <span style="font-size: 1rem; font-weight: 600; color: #333;">预约列表</span>
+      <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: #888;">
+        <span>操作员 op01</span>
+        <span style="cursor: pointer;">退出</span>
+      </div>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div style="display: flex; gap: 0.5rem; padding: 0.75rem 1.25rem; background: white; border-bottom: 1px solid #eee; flex-wrap: wrap;">
+      <input placeholder="搜索预约编号/车牌号" style="padding: 0.4rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; width: 180px; outline: none;">
+      <select style="padding: 0.4rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; outline: none;">
+        <option>全部状态</option>
+        <option>待取号</option>
+        <option>排队中</option>
+        <option>已完成</option>
+        <option>已取消</option>
+      </select>
+      <select style="padding: 0.4rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; outline: none;">
+        <option>全部品种</option>
+        <option>中科发5</option>
+        <option>吉宏6</option>
+        <option>鲜食玉米</option>
+        <option>杂粮</option>
+      </select>
+      <input type="date" value="2026-05-22" style="padding: 0.4rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; outline: none;">
+      <button style="padding: 0.4rem 0.8rem; background: #FF6600; color: white; border: none; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">查询</button>
+      <button style="padding: 0.4rem 0.8rem; background: white; color: #666; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">重置</button>
+    </div>
+
+    <!-- 预约表格 -->
+    <div style="flex: 1; padding: 0.75rem 1.25rem; overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+        <thead>
+          <tr style="background: #f5f5f5; color: #666; text-align: left;">
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">预约编号</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">驾驶员</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">手机号</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">车牌号</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">品种</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">预约时间</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">状态</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">20260522-001</td>
+            <td style="padding: 0.6rem; color: #333;">张师傅</td>
+            <td style="padding: 0.6rem; color: #666;">138****1234</td>
+            <td style="padding: 0.6rem; color: #333;">辽A12345</td>
+            <td style="padding: 0.6rem; color: #666;">中科发5</td>
+            <td style="padding: 0.6rem; color: #666;">09:00</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.5rem; border-radius: 4px; background: #e8f5e9; color: #2e7d32; font-size: 0.7rem; font-weight: 600;">已完成</span></td>
+            <td style="padding: 0.6rem;"><span style="color: #999; font-size: 0.7rem;">—</span></td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">20260522-002</td>
+            <td style="padding: 0.6rem; color: #333;">李师傅</td>
+            <td style="padding: 0.6rem; color: #666;">139****5678</td>
+            <td style="padding: 0.6rem; color: #333;">辽B67890</td>
+            <td style="padding: 0.6rem; color: #666;">吉宏6</td>
+            <td style="padding: 0.6rem; color: #666;">09:30</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.5rem; border-radius: 4px; background: #fff3e0; color: #e65100; font-size: 0.7rem; font-weight: 600;">扦样中</span></td>
+            <td style="padding: 0.6rem;">
+              <span style="color: #FF6600; cursor: pointer; font-size: 0.7rem;">录入</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">20260522-008</td>
+            <td style="padding: 0.6rem; color: #333;">王师傅</td>
+            <td style="padding: 0.6rem; color: #666;">137****9012</td>
+            <td style="padding: 0.6rem; color: #333;">辽C13579</td>
+            <td style="padding: 0.6rem; color: #666;">鲜食玉米</td>
+            <td style="padding: 0.6rem; color: #666;">10:30</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.5rem; border-radius: 4px; background: #e3f2fd; color: #1565c0; font-size: 0.7rem; font-weight: 600;">排队中</span></td>
+            <td style="padding: 0.6rem;">
+              <span style="color: #FF6600; cursor: pointer; font-size: 0.7rem;">叫号</span>
+              <span style="color: #999; margin: 0 0.3rem;">|</span>
+              <span style="color: #e53935; cursor: pointer; font-size: 0.7rem;">取消</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">20260522-012</td>
+            <td style="padding: 0.6rem; color: #333;">赵师傅</td>
+            <td style="padding: 0.6rem; color: #666;">136****3456</td>
+            <td style="padding: 0.6rem; color: #333;">辽D24680</td>
+            <td style="padding: 0.6rem; color: #666;">杂粮</td>
+            <td style="padding: 0.6rem; color: #666;">11:00</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.5rem; border-radius: 4px; background: #f5f5f5; color: #999; font-size: 0.7rem; font-weight: 600;">待取号</span></td>
+            <td style="padding: 0.6rem;">
+              <span style="color: #e53935; cursor: pointer; font-size: 0.7rem;">取消</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">20260521-015</td>
+            <td style="padding: 0.6rem; color: #333;">孙师傅</td>
+            <td style="padding: 0.6rem; color: #666;">135****7890</td>
+            <td style="padding: 0.6rem; color: #333;">辽E13579</td>
+            <td style="padding: 0.6rem; color: #666;">中科发5</td>
+            <td style="padding: 0.6rem; color: #666;">14:00</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.5rem; border-radius: 4px; background: #f5f5f5; color: #999; font-size: 0.7rem; font-weight: 600;">已取消</span></td>
+            <td style="padding: 0.6rem;"><span style="color: #999; font-size: 0.7rem;">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 分页 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: white; border-top: 1px solid #eee; font-size: 0.8rem; color: #888;">
+      <span>共 12 条记录</span>
+      <div style="display: flex; gap: 0.3rem;">
+        <span style="padding: 0.3rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;">&laquo;</span>
+        <span style="padding: 0.3rem 0.6rem; border: 1px solid #FF6600; border-radius: 4px; background: #FF6600; color: white; cursor: pointer;">1</span>
+        <span style="padding: 0.3rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;">2</span>
+        <span style="padding: 0.3rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;">3</span>
+        <span style="padding: 0.3rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;">&raquo;</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 侧边栏 200px — 桔色背景，当前页高亮白色左边框<br>
+    &bull; 顶部栏 — 页面标题 + 用户信息<br>
+    &bull; 筛选栏 — 搜索框 + 状态/品种下拉 + 日期 + 查询/重置<br>
+    &bull; 数据表格 — 8列显示完整预约信息<br>
+    &bull; 状态标签配色与移动端一致（绿/橙/蓝/灰）<br>
+    &bull; 操作列 — 根据状态显示可用操作（叫号/录入/取消）<br>
+    &bull; 底部分页
+  </p>
+</div>

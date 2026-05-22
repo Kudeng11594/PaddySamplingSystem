@@ -1,0 +1,136 @@
+<div class="section">
+  <h3>用户管理（管理员PC）</h3>
+  <p class="subtitle">管理操作员和管理者账号</p>
+</div>
+
+<div class="mockup" style="max-width: 900px; margin: 0 auto; background: #fefbfb; border-radius: var(--radius-lg); overflow: hidden; display: flex; min-height: 500px;">
+
+  <!-- 侧边栏 -->
+  <div style="width: 200px; background: #FF6600; color: white; display: flex; flex-direction: column; flex-shrink: 0;">
+    <div style="padding: 1rem; font-size: 1rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.15);">好雨粮库</div>
+    <div style="flex: 1; padding: 0.5rem 0;">
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">预约列表</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">排队看板</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">扦样录入</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">数据看板</div>
+      <div style="padding: 0.6rem 1rem; background: rgba(255,255,255,0.15); font-size: 0.85rem; font-weight: 600; border-left: 3px solid white;">用户管理</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.8rem; cursor: pointer;">退出登录</div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div style="flex: 1; display: flex; flex-direction: column; background: #fefbfb;">
+
+    <!-- 顶部栏 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: white; border-bottom: 1px solid #eee;">
+      <span style="font-size: 1rem; font-weight: 600; color: #333;">用户管理</span>
+      <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: #888;">
+        <span>管理员 admin</span>
+        <span style="cursor: pointer;">退出</span>
+      </div>
+    </div>
+
+    <!-- 操作栏 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: white; border-bottom: 1px solid #eee;">
+      <div style="display: flex; gap: 0.5rem;">
+        <input placeholder="搜索用户名" style="padding: 0.4rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; width: 160px; outline: none;">
+        <select style="padding: 0.4rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; outline: none;">
+          <option>全部角色</option>
+          <option>管理员</option>
+          <option>操作员</option>
+          <option>管理者</option>
+        </select>
+        <button style="padding: 0.4rem 0.8rem; background: #FF6600; color: white; border: none; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">查询</button>
+      </div>
+      <button style="padding: 0.45rem 0.9rem; background: #FF6600; color: white; border: none; border-radius: 4px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">+ 新增用户</button>
+    </div>
+
+    <!-- 用户表格 -->
+    <div style="flex: 1; padding: 0.75rem 1.25rem;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem;">
+        <thead>
+          <tr style="background: #f5f5f5; color: #666; text-align: left;">
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">用户名</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">显示名称</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">角色</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">创建时间</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">最后登录</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">状态</th>
+            <th style="padding: 0.5rem 0.6rem; font-weight: 600;">操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">admin</td>
+            <td style="padding: 0.6rem; color: #333;">系统管理员</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #fff3e0; color: #e65100; font-size: 0.7rem; font-weight: 600;">管理员</span></td>
+            <td style="padding: 0.6rem; color: #666;">2026-01-01</td>
+            <td style="padding: 0.6rem; color: #666;">2026-05-22 08:00</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #e8f5e9; color: #2e7d32; font-size: 0.7rem; font-weight: 600;">在线</span></td>
+            <td style="padding: 0.6rem; color: #ccc; font-size: 0.7rem;">—</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">op01</td>
+            <td style="padding: 0.6rem; color: #333;">操作员001</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #e3f2fd; color: #1565c0; font-size: 0.7rem; font-weight: 600;">操作员</span></td>
+            <td style="padding: 0.6rem; color: #666;">2026-01-01</td>
+            <td style="padding: 0.6rem; color: #666;">2026-05-22 08:15</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #e8f5e9; color: #2e7d32; font-size: 0.7rem; font-weight: 600;">在线</span></td>
+            <td style="padding: 0.6rem; display: flex; gap: 0.4rem;">
+              <span style="color: #FF6600; cursor: pointer; font-size: 0.7rem;">重置密码</span>
+              <span style="color: #999;">|</span>
+              <span style="color: #e53935; cursor: pointer; font-size: 0.7rem;">禁用</span>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #f0f0f0;">
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">op02</td>
+            <td style="padding: 0.6rem; color: #333;">操作员002</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #e3f2fd; color: #1565c0; font-size: 0.7rem; font-weight: 600;">操作员</span></td>
+            <td style="padding: 0.6rem; color: #666;">2026-03-15</td>
+            <td style="padding: 0.6rem; color: #666;">2026-05-21 16:30</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #f5f5f5; color: #999; font-size: 0.7rem; font-weight: 600;">离线</span></td>
+            <td style="padding: 0.6rem; display: flex; gap: 0.4rem;">
+              <span style="color: #FF6600; cursor: pointer; font-size: 0.7rem;">重置密码</span>
+              <span style="color: #999;">|</span>
+              <span style="color: #e53935; cursor: pointer; font-size: 0.7rem;">禁用</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0.6rem; font-weight: 500; color: #333;">manager01</td>
+            <td style="padding: 0.6rem; color: #333;">管理者001</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #f3e5f5; color: #7b1fa2; font-size: 0.7rem; font-weight: 600;">管理者</span></td>
+            <td style="padding: 0.6rem; color: #666;">2026-04-01</td>
+            <td style="padding: 0.6rem; color: #666;">2026-05-20 09:00</td>
+            <td style="padding: 0.6rem;"><span style="padding: 0.2rem 0.4rem; border-radius: 4px; background: #f5f5f5; color: #999; font-size: 0.7rem; font-weight: 600;">离线</span></td>
+            <td style="padding: 0.6rem; display: flex; gap: 0.4rem;">
+              <span style="color: #FF6600; cursor: pointer; font-size: 0.7rem;">重置密码</span>
+              <span style="color: #999;">|</span>
+              <span style="color: #e53935; cursor: pointer; font-size: 0.7rem;">禁用</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 底部分页 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: white; border-top: 1px solid #eee; font-size: 0.8rem; color: #888;">
+      <span>共 4 个用户</span>
+      <div style="display: flex; gap: 0.3rem;">
+        <span style="padding: 0.3rem 0.6rem; border: 1px solid #FF6600; border-radius: 4px; background: #FF6600; color: white; cursor: pointer;">1</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 操作栏 — 搜索框 + 角色筛选 + 新增用户按钮<br>
+    &bull; 用户表格 — 用户名、显示名称、角色、创建时间、最后登录、状态、操作<br>
+    &bull; 角色标签颜色区分：管理员橙色、操作员蓝色、管理者紫色<br>
+    &bull; 状态标签：在线绿色、离线灰色<br>
+    &bull; 操作列：重置密码 / 禁用（admin账号不可操作）<br>
+    &bull; 侧边栏不显示"退出登录"底部栏（管理员不可删除自己）
+  </p>
+</div>

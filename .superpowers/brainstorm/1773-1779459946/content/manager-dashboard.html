@@ -1,0 +1,137 @@
+<div class="section">
+  <h3>数据看板</h3>
+  <p class="subtitle">管理者手机端实时数据概览</p>
+</div>
+
+<div class="mockup" style="max-width: 380px; margin: 0 auto; background: #fefbfb; border-radius: var(--radius-lg); overflow: hidden;">
+  <div class="mockup-header" style="background: #FF6600; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem;">
+    <span>&larr; 返回</span>
+    <span style="font-weight: 600;">数据看板</span>
+    <span style="visibility: hidden;">占位</span>
+  </div>
+  <div class="mockup-body" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; background: #fefbfb;">
+
+    <!-- 日期选择 -->
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 0.8rem; color: #888;">2026年5月22日</span>
+      <div style="display: flex; gap: 0.4rem;">
+        <button style="padding: 0.3rem 0.6rem; border: 1px solid #FF6600; border-radius: 4px; background: #FF6600; color: white; font-size: 0.75rem; cursor: pointer;">今日</button>
+        <button style="padding: 0.3rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; background: white; color: #666; font-size: 0.75rem; cursor: pointer;">昨日</button>
+        <button style="padding: 0.3rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; background: white; color: #666; font-size: 0.75rem; cursor: pointer;">近7日</button>
+      </div>
+    </div>
+
+    <!-- 概览指标卡片 -->
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
+      <div style="background: white; border-radius: 8px; padding: 0.75rem; text-align: center; border: 1px solid #eee;">
+        <div style="font-size: 1.4rem; font-weight: 700; color: #FF6600;">12</div>
+        <div style="font-size: 0.7rem; color: #888; margin-top: 0.2rem;">今日预约</div>
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 0.75rem; text-align: center; border: 1px solid #eee;">
+        <div style="font-size: 1.4rem; font-weight: 700; color: #4caf50;">8</div>
+        <div style="font-size: 0.7rem; color: #888; margin-top: 0.2rem;">已完成</div>
+      </div>
+      <div style="background: white; border-radius: 8px; padding: 0.75rem; text-align: center; border: 1px solid #eee;">
+        <div style="font-size: 1.4rem; font-weight: 700; color: #e65100;">3</div>
+        <div style="font-size: 0.7rem; color: #888; margin-top: 0.2rem;">排队中</div>
+      </div>
+    </div>
+
+    <!-- 各品种预约分布 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee;">
+      <div style="font-size: 0.85rem; font-weight: 600; color: #333; margin-bottom: 0.5rem;">各品种预约分布</div>
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">
+            <span>中科发5</span>
+            <span>5 笔</span>
+          </div>
+          <div style="width: 100%; height: 6px; background: #eee; border-radius: 3px;">
+            <div style="width: 42%; height: 100%; background: #FF6600; border-radius: 3px;"></div>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">
+            <span>吉宏6</span>
+            <span>3 笔</span>
+          </div>
+          <div style="width: 100%; height: 6px; background: #eee; border-radius: 3px;">
+            <div style="width: 25%; height: 100%; background: #FF6600; border-radius: 3px;"></div>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">
+            <span>鲜食玉米</span>
+            <span>2 笔</span>
+          </div>
+          <div style="width: 100%; height: 6px; background: #eee; border-radius: 3px;">
+            <div style="width: 17%; height: 100%; background: #FF6600; border-radius: 3px;"></div>
+          </div>
+        </div>
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #666; margin-bottom: 0.2rem;">
+            <span>杂粮</span>
+            <span>2 笔</span>
+          </div>
+          <div style="width: 100%; height: 6px; background: #eee; border-radius: 3px;">
+            <div style="width: 17%; height: 100%; background: #FF6600; border-radius: 3px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 实时排队队列 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <span style="font-size: 0.85rem; font-weight: 600; color: #333;">当前排队</span>
+        <span style="font-size: 0.7rem; color: #FF6600; font-weight: 600;">共 3 位</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px solid #f5f5f5; font-size: 0.8rem;">
+          <span style="width: 20px; height: 20px; border-radius: 50%; background: #FF6600; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600;">1</span>
+          <span style="flex: 1; color: #333;">辽A12345</span>
+          <span style="color: #666;">中科发5</span>
+          <span style="color: #999; font-size: 0.7rem;">等待 25min</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px solid #f5f5f5; font-size: 0.8rem;">
+          <span style="width: 20px; height: 20px; border-radius: 50%; background: #eee; color: #888; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600;">2</span>
+          <span style="flex: 1; color: #333;">辽B67890</span>
+          <span style="color: #666;">吉宏6</span>
+          <span style="color: #999; font-size: 0.7rem;">等待 15min</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; font-size: 0.8rem;">
+          <span style="width: 20px; height: 20px; border-radius: 50%; background: #eee; color: #888; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 600;">3</span>
+          <span style="flex: 1; color: #333;">辽C13579</span>
+          <span style="color: #666;">鲜食玉米</span>
+          <span style="color: #999; font-size: 0.7rem;">等待 5min</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="mockup-footer" style="display: flex; border-top: 1px solid #eee; background: white;">
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #FF6600; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128200;</div>
+      看板
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #888; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128269;</div>
+      查询
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #888; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128295;</div>
+      设置
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 日期筛选 — 今日/昨日/近7日快速切换<br>
+    &bull; 指标卡片 — 今日预约数、已完成、排队中，颜色区分<br>
+    &bull; 品种分布 — 横向柱状图展示各品种预约量<br>
+    &bull; 实时排队 — 按顺序显示当前排队车辆及等待时间<br>
+    &bull; 底部导航不同：看板 / 查询 / 设置
+  </p>
+</div>

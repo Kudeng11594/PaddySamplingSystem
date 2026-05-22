@@ -1,0 +1,108 @@
+<div class="section">
+  <h3>排队状态</h3>
+  <p class="subtitle">实时显示当前排队进度</p>
+</div>
+
+<div class="mockup" style="max-width: 380px; margin: 0 auto; background: #fefbfb; border-radius: var(--radius-lg); overflow: hidden;">
+  <div class="mockup-header" style="background: #FF6600; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem;">
+    <span>&larr; 返回</span>
+    <span style="font-weight: 600;">排队状态</span>
+    <span style="visibility: hidden;">占位</span>
+  </div>
+  <div class="mockup-body" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; background: #fefbfb;">
+
+    <!-- 当前预约信息 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee; display: flex; flex-direction: column; gap: 0.4rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.75rem; color: #888;">预约编号</span>
+        <span style="font-weight: 600; font-size: 0.9rem; color: #333;">NO.20260522-008</span>
+      </div>
+      <div style="display: flex; gap: 1rem; font-size: 0.8rem; color: #666;">
+        <span>吉宏6</span>
+        <span>2026-05-22 10:30</span>
+      </div>
+      <div style="font-size: 0.75rem; color: #999;">辽B67890 · 李师傅</div>
+    </div>
+
+    <!-- 排队进度大卡片 -->
+    <div style="background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #eee; display: flex; flex-direction: column; align-items: center; gap: 0.75rem;">
+      <div style="font-size: 0.8rem; color: #888;">当前排位</div>
+      <div style="font-size: 2.5rem; font-weight: 700; color: #FF6600; line-height: 1;">3</div>
+      <div style="font-size: 0.8rem; color: #888;">您前面还有 <span style="color: #333; font-weight: 600;">2</span> 位等待</div>
+      <div style="width: 100%; height: 6px; background: #eee; border-radius: 3px; overflow: hidden;">
+        <div style="width: 40%; height: 100%; background: #FF6600; border-radius: 3px;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.7rem; color: #999;">
+        <span>已等待 15 分钟</span>
+        <span>预计还需 15-20 分钟</span>
+      </div>
+    </div>
+
+    <!-- 排队阶段时间线 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #4caf50; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">&#10003;</div>
+        <div style="flex: 1;">
+          <div style="font-size: 0.85rem; font-weight: 500; color: #333;">预约成功</div>
+          <div style="font-size: 0.7rem; color: #999;">2026-05-22 08:15</div>
+        </div>
+      </div>
+      <div style="width: 2px; height: 20px; background: #4caf50; margin-left: 11px;"></div>
+      <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #4caf50; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">&#10003;</div>
+        <div style="flex: 1;">
+          <div style="font-size: 0.85rem; font-weight: 500; color: #333;">已到厂</div>
+          <div style="font-size: 0.7rem; color: #999;">2026-05-22 09:30</div>
+        </div>
+      </div>
+      <div style="width: 2px; height: 20px; background: #FF6600; margin-left: 11px;"></div>
+      <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF6600; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.7rem;">3</div>
+        <div style="flex: 1;">
+          <div style="font-size: 0.85rem; font-weight: 500; color: #FF6600;">排队中</div>
+          <div style="font-size: 0.7rem; color: #999;">当前第 3 位</div>
+        </div>
+      </div>
+      <div style="width: 2px; height: 20px; background: #eee; margin-left: 11px;"></div>
+      <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #eee; color: #ccc; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">4</div>
+        <div style="flex: 1;">
+          <div style="font-size: 0.85rem; color: #bbb;">扦样中</div>
+        </div>
+      </div>
+      <div style="width: 2px; height: 20px; background: #eee; margin-left: 11px;"></div>
+      <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0;">
+        <div style="width: 24px; height: 24px; border-radius: 50%; background: #eee; color: #ccc; display: flex; align-items: center; justify-content: center; font-size: 0.75rem;">4</div>
+        <div style="flex: 1;">
+          <div style="font-size: 0.85rem; color: #bbb;">已完成</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="mockup-footer" style="display: flex; border-top: 1px solid #eee; background: white;">
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #888; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128197;</div>
+      预约
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #888; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128269;</div>
+      查询
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #FF6600; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128260;</div>
+      排队
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 排位大数字显眼展示，一眼看到当前位置<br>
+    &bull; 进度条直观显示等待进度<br>
+    &bull; 时间线展示完整流程：预约成功 → 已到厂 → 排队中 → 扦样中 → 已完成<br>
+    &bull; 已完成步骤绿色对勾，当前步骤橙色高亮，未完成灰色<br>
+    &bull; 每 30 秒自动刷新排队数据
+  </p>
+</div>

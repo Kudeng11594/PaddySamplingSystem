@@ -1,0 +1,135 @@
+<div class="section">
+  <h3>扦样录入（操作员PC）</h3>
+  <p class="subtitle">记录扦样检测数据，提交后自动更新状态</p>
+</div>
+
+<div class="mockup" style="max-width: 900px; margin: 0 auto; background: #fefbfb; border-radius: var(--radius-lg); overflow: hidden; display: flex; min-height: 500px;">
+
+  <!-- 侧边栏 -->
+  <div style="width: 200px; background: #FF6600; color: white; display: flex; flex-direction: column; flex-shrink: 0;">
+    <div style="padding: 1rem; font-size: 1rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.15);">好雨粮库</div>
+    <div style="flex: 1; padding: 0.5rem 0;">
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">预约列表</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">排队看板</div>
+      <div style="padding: 0.6rem 1rem; background: rgba(255,255,255,0.15); font-size: 0.85rem; font-weight: 600; border-left: 3px solid white;">扦样录入</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">数据看板</div>
+      <div style="padding: 0.6rem 1rem; font-size: 0.85rem; cursor: pointer;">用户管理</div>
+    </div>
+    <div style="padding: 0.6rem 1rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.8rem; cursor: pointer;">退出登录</div>
+  </div>
+
+  <!-- 主内容区 -->
+  <div style="flex: 1; display: flex; flex-direction: column; background: #fefbfb;">
+
+    <!-- 顶部栏 -->
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: white; border-bottom: 1px solid #eee;">
+      <span style="font-size: 1rem; font-weight: 600; color: #333;">扦样录入</span>
+      <div style="display: flex; align-items: center; gap: 1rem; font-size: 0.8rem; color: #888;">
+        <span>操作员 op01</span>
+        <span style="cursor: pointer;">退出</span>
+      </div>
+    </div>
+
+    <!-- 录入内容 -->
+    <div style="flex: 1; padding: 1rem 1.25rem;">
+
+      <!-- 预约信息卡片（只读参考） -->
+      <div style="background: #fff8f0; border-radius: 8px; padding: 0.75rem 1rem; border: 1px solid #ffe0b2; display: flex; gap: 1.5rem; font-size: 0.8rem; margin-bottom: 1rem; flex-wrap: wrap;">
+        <span><span style="color: #888;">预约编号：</span><span style="font-weight: 600; color: #333;">20260522-002</span></span>
+        <span><span style="color: #888;">驾驶员：</span><span style="color: #333;">李师傅</span></span>
+        <span><span style="color: #888;">车牌号：</span><span style="color: #333;">辽B67890</span></span>
+        <span><span style="color: #888;">品种：</span><span style="color: #333;">吉宏6</span></span>
+      </div>
+
+      <!-- 检测数据表单 -->
+      <div style="background: white; border-radius: 8px; padding: 1.25rem; border: 1px solid #eee;">
+        <div style="font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 1rem;">检测数据</div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">水分 <span style="color: #e53935;">*</span></label>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <input value="14.5" style="flex: 1; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <span style="font-size: 0.8rem; color: #888;">%</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">出米率 <span style="color: #e53935;">*</span></label>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <input value="62.5" style="flex: 1; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <span style="font-size: 0.8rem; color: #888;">%</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">杂质率</label>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <input value="1.2" style="flex: 1; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <span style="font-size: 0.8rem; color: #888;">%</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">腹白</label>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <input placeholder="%" style="flex: 1; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <span style="font-size: 0.8rem; color: #888;">%</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">病斑</label>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <input placeholder="%" style="flex: 1; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <span style="font-size: 0.8rem; color: #888;">%</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">异类互混</label>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <input placeholder="%" style="flex: 1; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <span style="font-size: 0.8rem; color: #888;">%</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+            <label style="font-size: 0.8rem; color: #555; font-weight: 500;">检测结论 <span style="color: #e53935;">*</span></label>
+            <select style="padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; outline: none;">
+              <option>扦样通过</option>
+              <option>扦样不通过</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- 备注 -->
+        <div style="display: flex; flex-direction: column; gap: 0.25rem; margin-top: 1rem;">
+          <label style="font-size: 0.8rem; color: #555; font-weight: 500;">备注</label>
+          <textarea placeholder="选填，如特殊说明" style="width: 100%; padding: 0.5rem 0.6rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem; min-height: 3rem; resize: vertical; outline: none; box-sizing: border-box;"></textarea>
+        </div>
+
+        <!-- 操作按钮 -->
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.25rem;">
+          <button style="padding: 0.55rem 1.2rem; background: white; color: #666; border: 1px solid #ddd; border-radius: 6px; font-size: 0.85rem; cursor: pointer;">取消</button>
+          <button style="padding: 0.55rem 1.2rem; background: #FF6600; color: white; border: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer;">保存并完成</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 顶部预约信息卡片 — 淡桔色背景，只读展示当前操作关联的预约<br>
+    &bull; 两列表单布局 — 水分*、出米率*、杂质率、腹白、病斑、异类互混、检测结论*<br>
+    &bull; 必填项标记红色星号（水分、出米率、检测结论）<br>
+    &bull; 单位后缀（%）在输入框右侧<br>
+    &bull; 底部按钮右对齐 — 取消 + 保存并完成<br>
+    &bull; 提交后预约状态自动流转到"已完成"
+  </p>
+</div>

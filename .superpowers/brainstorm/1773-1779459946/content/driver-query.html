@@ -1,0 +1,89 @@
+<div class="section">
+  <h3>查询记录</h3>
+  <p class="subtitle">输入手机号或预约编号查询进度</p>
+</div>
+
+<div class="mockup" style="max-width: 380px; margin: 0 auto; background: #fefbfb; border-radius: var(--radius-lg); overflow: hidden;">
+  <div class="mockup-header" style="background: #FF6600; color: white; display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem;">
+    <span>&larr; 返回</span>
+    <span style="font-weight: 600;">查询记录</span>
+    <span style="visibility: hidden;">占位</span>
+  </div>
+  <div class="mockup-body" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; background: #fefbfb;">
+
+    <!-- 搜索栏 -->
+    <div style="display: flex; gap: 0.5rem;">
+      <input class="mock-input" placeholder="输入手机号或预约编号" style="flex: 1; background: white; border: 1px solid #ddd; border-radius: 6px; padding: 0.6rem 0.75rem; font-size: 0.9rem; outline: none;">
+      <button style="padding: 0.6rem 1rem; background: #FF6600; color: white; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; white-space: nowrap;">
+        查询
+      </button>
+    </div>
+
+    <!-- 查询结果列表 -->
+    <div style="font-size: 0.8rem; color: #888; padding: 0.25rem 0;">共 3 条记录</div>
+
+    <!-- 记录卡片 1 - 已完成 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 600; font-size: 0.9rem; color: #333;">NO.20260522-001</span>
+        <span style="font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: #e8f5e9; color: #2e7d32; font-weight: 600;">已完成</span>
+      </div>
+      <div style="display: flex; gap: 1rem; font-size: 0.8rem; color: #666;">
+        <span>中科发5</span>
+        <span>2026-05-22 09:00</span>
+      </div>
+      <div style="font-size: 0.75rem; color: #999;">辽A12345 · 张师傅</div>
+    </div>
+
+    <!-- 记录卡片 2 - 排队中 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 600; font-size: 0.9rem; color: #333;">NO.20260522-008</span>
+        <span style="font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: #fff3e0; color: #e65100; font-weight: 600;">排队中</span>
+      </div>
+      <div style="display: flex; gap: 1rem; font-size: 0.8rem; color: #666;">
+        <span>吉宏6</span>
+        <span>2026-05-22 10:30</span>
+      </div>
+      <div style="font-size: 0.75rem; color: #999;">辽B67890 · 李师傅</div>
+    </div>
+
+    <!-- 记录卡片 3 - 已取消 -->
+    <div style="background: white; border-radius: 8px; padding: 0.75rem; border: 1px solid #eee; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-weight: 600; font-size: 0.9rem; color: #333;">NO.20260521-015</span>
+        <span style="font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px; background: #f5f5f5; color: #999; font-weight: 600;">已取消</span>
+      </div>
+      <div style="display: flex; gap: 1rem; font-size: 0.8rem; color: #666;">
+        <span>鲜食玉米</span>
+        <span>2026-05-21 14:00</span>
+      </div>
+      <div style="font-size: 0.75rem; color: #999;">辽C13579 · 王师傅</div>
+    </div>
+
+  </div>
+  <div class="mockup-footer" style="display: flex; border-top: 1px solid #eee; background: white;">
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #888; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128197;</div>
+      预约
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #FF6600; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128269;</div>
+      查询
+    </div>
+    <div style="flex: 1; text-align: center; padding: 0.5rem; color: #888; font-size: 0.75rem;">
+      <div style="font-size: 1.2rem; margin-bottom: 0.15rem;">&#128260;</div>
+      排队
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 1.5rem;">
+  <p class="subtitle" style="font-size: 0.85rem;">
+    <strong>设计要点：</strong><br>
+    &bull; 顶部搜索栏 — 输入手机号或预约编号，一键查询<br>
+    &bull; 结果卡片 — 显示预约编号、品种、时间、车牌号、司机<br>
+    &bull; 状态标签 — 颜色区分：绿色=已完成，橙色=排队中，灰色=已取消<br>
+    &bull; 底部导航"查询"高亮，与当前页面一致
+  </p>
+</div>
