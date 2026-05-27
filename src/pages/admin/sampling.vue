@@ -5,11 +5,16 @@ import AppointmentInfoCard from '../../components/AppointmentInfoCard.vue'
 import { listAppointments } from '../../api'
 import type { Appointment } from '../../api/types'
 
+const loading = ref(true)
 const appointments = ref<Appointment[]>([])
 
 onMounted(async () => {
-  const res = await listAppointments({ pageSize: 200 })
-  appointments.value = res.items
+  try {
+    const res = await listAppointments({ pageSize: 200 })
+    appointments.value = res.items
+  } finally {
+    loading.value = false
+  }
 })
 const selectedId = ref('')
 const selectedAppointment = ref<Appointment | null>(null)

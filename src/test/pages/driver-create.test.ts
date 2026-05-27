@@ -90,7 +90,7 @@ describe('DriverCreatePage', () => {
   })
 
   it('shows error message on submission failure', async () => {
-    mockCreateAppointment.mockRejectedValueOnce({ message: '网络错误' })
+    mockCreateAppointment.mockRejectedValueOnce(new Error('网络错误'))
     const wrapper = await createWrapper()
 
     await fillForm(wrapper)

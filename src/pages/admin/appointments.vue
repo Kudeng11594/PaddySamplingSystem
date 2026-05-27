@@ -11,13 +11,18 @@ const varietyFilter = ref('')
 const page = ref(1)
 const pageSize = 10
 
+const loading = ref(true)
 const allAppointments = ref<Appointment[]>([])
 const varieties = ref<string[]>([])
 
 onMounted(async () => {
-  const res = await listAppointments({ pageSize: 200 })
-  allAppointments.value = res.items
-  varieties.value = await getVarieties()
+  try {
+    const res = await listAppointments({ pageSize: 200 })
+    allAppointments.value = res.items
+    varieties.value = await getVarieties()
+  } finally {
+    loading.value = false
+  }
 })
 
 const statusOptions = [

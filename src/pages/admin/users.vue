@@ -7,11 +7,16 @@ import type { User, UserRole } from '../../api/types'
 const searchKeyword = ref('')
 const roleFilter = ref('')
 
+const loading = ref(true)
 const allUsers = ref<User[]>([])
 
 onMounted(async () => {
-  const res = await listUsers()
-  allUsers.value = res.items
+  try {
+    const res = await listUsers()
+    allUsers.value = res.items
+  } finally {
+    loading.value = false
+  }
 })
 
 const roleOptions = [

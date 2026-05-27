@@ -5,8 +5,8 @@ import MetricCard from '../../components/MetricCard.vue'
 import { getDashboardDetail, getQueue } from '../../api'
 import type { DashboardDetail, QueueBoard } from '../../api/types'
 
-const detail = ref<DashboardDetail>(null!)
-const queueData = ref<QueueBoard>(null!)
+const detail = ref<DashboardDetail | null>(null)
+const queueData = ref<QueueBoard | null>(null)
 
 const queueList = computed(() => {
   if (!queueData.value) return []
@@ -19,20 +19,24 @@ const queueList = computed(() => {
 })
 
 onMounted(async () => {
-  detail.value = await getDashboardDetail()
-  const q = await getQueue()
+  const [d, q] = await Promise.all([getDashboardDetail(), getQueue()])
+  detail.value = d
   queueData.value = q
 })
 
 const dateOptions = ['今天', '昨天', '本周']
 const activeDate = ref('今天')
 
-const todayStats = computed(() => [
-  { label: '今日预约', value: detail.value.todayAppointments },
-  { label: '已完成', value: detail.value.completedCount },
-  { label: '排队中', value: detail.value.queueingCount },
-  { label: '已取消', value: detail.value.cancelledCount },
-])
+const todayStats = computed(() => {
+  const d = detail.value
+  if (!d) return []
+  return [
+    { label: '今日预约', value: d.todayAppointments },
+    { label: '已完成', value: d.completedCount },
+    { label: '排队中', value: d.queueingCount },
+    { label: '已取消', value: d.cancelledCount },
+  ]
+})
 </script>
 
 <template>
@@ -41,6 +45,7 @@ const todayStats = computed(() => [
       <div class="page-header">管理看板</div>
     </template>
 
+    <template v-if="detail">
     <div class="date-tabs">
       <button
         v-for="opt in dateOptions"
@@ -99,6 +104,8 @@ const todayStats = computed(() => [
         </div>
       </div>
     </div>
+    </template>
+    <div v-else class="loading-state">加载中...</div>
   </MobileLayout>
 </template>
 
@@ -231,5 +238,12 @@ const todayStats = computed(() => [
 .queue-wait {
   color: var(--color-text-muted, #888);
   font-size: 0.8rem;
+}
+
+.loading-state {
+  text-align: center;
+  color: var(--color-text-placeholder, #999);
+  padding: 3rem 0;
+  font-size: 0.9rem;
 }
 </style>

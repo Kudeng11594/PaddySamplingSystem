@@ -43,8 +43,8 @@ async function handleSubmit() {
       remark: f.remark || undefined,
     })
     router.push('/driver/queue')
-  } catch (e: any) {
-    submitError.value = e?.message || '提交失败，请稍后重试'
+  } catch (e: unknown) {
+    submitError.value = e instanceof Error ? e.message : '提交失败，请稍后重试'
   } finally {
     submitting.value = false
   }

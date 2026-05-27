@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import DesktopLayout from '../../layouts/DesktopLayout.vue'
 import KpiCard from '../../components/KpiCard.vue'
 import { getDashboardDetail } from '../../api'
 import type { DashboardDetail } from '../../api/types'
 
-const detail = ref<DashboardDetail>(null!)
+const detail = ref<DashboardDetail | null>(null)
 
 onMounted(async () => {
   detail.value = await getDashboardDetail()
@@ -13,25 +13,34 @@ onMounted(async () => {
 const dateRange = ref('本周')
 const ranges = ['今天', '本周', '本月']
 
-const kpis = [
-  { label: '今日预约', value: detail.value.todayAppointments, trend: `昨日 ${detail.value.yesterdayComparison.appointments}`, borderColor: '#FF6600' },
-  { label: '已完成', value: detail.value.completedCount, trend: `昨日 ${detail.value.yesterdayComparison.completed}`, borderColor: '#2e7d32' },
-  { label: '排队中', value: detail.value.queueingCount, borderColor: '#1565c0' },
-  { label: '已取消', value: detail.value.cancelledCount, trend: `占 ${detail.value.cancelRate}`, borderColor: '#999' },
-  { label: '平均等待', value: `${detail.value.avgWaitTime}min`, borderColor: '#e65100' },
-  { label: '扦样通过率', value: `${detail.value.passRate}%`, borderColor: '#2e7d32' },
-]
+const kpis = computed(() => {
+  const d = detail.value
+  if (!d) return []
+  return [
+    { label: '今日预约', value: d.todayAppointments, trend: `昨日 ${d.yesterdayComparison.appointments}`, borderColor: '#FF6600' },
+    { label: '已完成', value: d.completedCount, trend: `昨日 ${d.yesterdayComparison.completed}`, borderColor: '#2e7d32' },
+    { label: '排队中', value: d.queueingCount, borderColor: '#1565c0' },
+    { label: '已取消', value: d.cancelledCount, trend: `占 ${d.cancelRate}`, borderColor: '#999' },
+    { label: '平均等待', value: `${d.avgWaitTime}min`, borderColor: '#e65100' },
+    { label: '扦样通过率', value: `${d.passRate}%`, borderColor: '#2e7d32' },
+  ]
+})
 
-const insights = [
-  { label: '平均扦样时间', value: `${detail.value.avgSamplingTime} 分钟` },
-  { label: '高峰时段', value: detail.value.peakHours },
-]
+const insights = computed(() => {
+  const d = detail.value
+  if (!d) return []
+  return [
+    { label: '平均扦样时间', value: `${d.avgSamplingTime} 分钟` },
+    { label: '高峰时段', value: d.peakHours },
+  ]
+})
 </script>
 
 <template>
   <DesktopLayout>
     <template #title>数据看板</template>
 
+    <template v-if="detail">
     <div class="dashboard-actions">
       <div class="range-tabs">
         <button
@@ -131,6 +140,8 @@ const insights = [
         <span class="insight-value">{{ insight.value }}</span>
       </div>
     </div>
+    </template>
+    <div v-else class="loading-state">加载中...</div>
   </DesktopLayout>
 </template>
 
@@ -334,5 +345,12 @@ const insights = [
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-text, #333);
+}
+
+.loading-state {
+  text-align: center;
+  color: var(--color-text-placeholder, #999);
+  padding: 3rem 0;
+  font-size: 0.9rem;
 }
 </style>
