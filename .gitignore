@@ -22,4 +22,4 @@ dist
 
 # Paddy project
 .worktrees/
-.env
+.envcoverage/

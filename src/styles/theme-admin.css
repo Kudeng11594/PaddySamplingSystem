@@ -1,0 +1,8 @@
+:root {
+  --color-primary: oklch(45% 0.22 250);
+  --color-bg: oklch(96% 0 0);
+  --color-surface: oklch(100% 0 0);
+  --space-xs: 0.125rem;
+  --space-sm: 0.375rem;
+  --space-md: 0.75rem;
+}

@@ -1,0 +1,7 @@
+:root {
+  --color-primary: oklch(50% 0.20 250);
+  --color-primary-light: oklch(65% 0.18 250);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1.25rem;
+}
