@@ -23,3 +23,13 @@ dist
 # Paddy project
 .worktrees/
 .envcoverage/
+
+# Tool-generated directories
+.agents/
+.superpowers/
+coverage/
+.gstack/
+.claude/
+
+# QA artifacts
+qa-screenshots/
