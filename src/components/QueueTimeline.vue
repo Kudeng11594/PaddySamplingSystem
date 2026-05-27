@@ -119,9 +119,9 @@ function stepState(index: number): 'completed' | 'current' | 'future' {
 
 .step-line {
   position: absolute;
-  left: 13.5px;
+  left: 13px;
   top: 34px;
-  width: 1px;
+  width: 2px;
   height: calc(100% - 8px);
   background: #eeeeee;
   z-index: 0;

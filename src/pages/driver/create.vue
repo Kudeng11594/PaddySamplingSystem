@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import MobileLayout from '../../layouts/MobileLayout.vue'
 import TagSelector from '../../components/TagSelector.vue'
-import { createAppointment } from '../../api/index'
-import { mockVarieties } from '../../api/mock/data'
+import { createAppointment, getVarieties } from '../../api'
 
 const router = useRouter()
 
@@ -19,12 +18,20 @@ const form = ref({
 })
 
 const submitting = ref(false)
+const submitError = ref('')
+
+const varieties = ref<string[]>([])
+
+onMounted(async () => {
+  varieties.value = await getVarieties()
+})
 
 async function handleSubmit() {
   const f = form.value
   if (!f.driverName || !f.phone || !f.licensePlate || !f.variety || !f.appointmentDate || !f.appointmentTime)
     return
   submitting.value = true
+  submitError.value = ''
   try {
     await createAppointment({
       driverName: f.driverName,
@@ -36,6 +43,8 @@ async function handleSubmit() {
       remark: f.remark || undefined,
     })
     router.push('/driver/queue')
+  } catch (e: any) {
+    submitError.value = e?.message || '提交失败，请稍后重试'
   } finally {
     submitting.value = false
   }
@@ -66,7 +75,7 @@ async function handleSubmit() {
 
       <div class="form-group">
         <label class="form-label">粮食品种</label>
-        <TagSelector v-model="form.variety" :options="mockVarieties" />
+        <TagSelector v-model="form.variety" :options="varieties" />
       </div>
 
       <div class="form-row">
@@ -85,6 +94,7 @@ async function handleSubmit() {
         <textarea v-model="form.remark" class="form-textarea" placeholder="选填" />
       </div>
 
+      <div v-if="submitError" class="error-msg">{{ submitError }}</div>
       <button class="submit-btn" :disabled="submitting" @click="handleSubmit">
         {{ submitting ? '提交中...' : '提交预约' }}
       </button>
@@ -163,5 +173,14 @@ async function handleSubmit() {
 .submit-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.error-msg {
+  color: #e53935;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: #fce4ec;
+  border-radius: var(--radius-md, 6px);
+  text-align: center;
 }
 </style>

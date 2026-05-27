@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import DesktopLayout from '../../layouts/DesktopLayout.vue'
 import KpiCard from '../../components/KpiCard.vue'
-import { mockDashboardDetail } from '../../api/mock/data'
+import { getDashboardDetail } from '../../api'
+import type { DashboardDetail } from '../../api/types'
 
-const detail = ref(mockDashboardDetail)
+const detail = ref<DashboardDetail>(null!)
+
+onMounted(async () => {
+  detail.value = await getDashboardDetail()
+})
 const dateRange = ref('本周')
 const ranges = ['今天', '本周', '本月']
 

@@ -1,11 +1,28 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import MobileLayout from '../../layouts/MobileLayout.vue'
 import MetricCard from '../../components/MetricCard.vue'
-import { mockDashboardDetail, mockQueueList } from '../../api/mock/data'
+import { getDashboardDetail, getQueue } from '../../api'
+import type { DashboardDetail, QueueBoard } from '../../api/types'
 
-const detail = ref(mockDashboardDetail)
-const queueList = ref(mockQueueList)
+const detail = ref<DashboardDetail>(null!)
+const queueData = ref<QueueBoard>(null!)
+
+const queueList = computed(() => {
+  if (!queueData.value) return []
+  return queueData.value.queue.map(item => ({
+    rank: item.position,
+    plate: item.licensePlate,
+    driver: item.driverName,
+    wait: `${Math.floor((Date.now() - new Date(item.queuedAt).getTime()) / 60000)}min`,
+  }))
+})
+
+onMounted(async () => {
+  detail.value = await getDashboardDetail()
+  const q = await getQueue()
+  queueData.value = q
+})
 
 const dateOptions = ['今天', '昨天', '本周']
 const activeDate = ref('今天')

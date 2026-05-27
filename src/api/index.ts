@@ -4,7 +4,7 @@ import type {
   CreateAppointmentRequest, QueryAppointmentRequest, ListAppointmentsParams,
   AssignTokenRequest, CompleteSamplingRequest,
   CancelRequest, CancelByDriverRequest,
-  Appointment, QueueBoard, MyPosition, DashboardData,
+  Appointment, QueueBoard, MyPosition, DashboardData, DashboardDetail,
   User, CreateUserRequest, ResetPasswordRequest,
 } from './types'
 
@@ -46,12 +46,16 @@ export async function getMyPosition(appointmentId: string): Promise<MyPosition> 
 
 // ---- Dashboard ----
 export async function getTodayDashboard(): Promise<DashboardData> { return (await ensureApi()).getTodayDashboard() }
+export async function getDashboardDetail(): Promise<DashboardDetail> { return (await ensureApi()).getDashboardDetail() }
 
 // ---- User Management ----
-export async function listUsers(): Promise<User[]> { return (await ensureApi()).listUsers() }
+export async function listUsers(): Promise<{ items: User[]; total: number }> { return (await ensureApi()).listUsers() }
 export async function createUser(req: CreateUserRequest): Promise<User> { return (await ensureApi()).createUser(req) }
 export async function deleteUser(id: string): Promise<void> { return (await ensureApi()).deleteUser(id) }
 export async function resetPassword(id: string, req: ResetPasswordRequest): Promise<void> { return (await ensureApi()).resetPassword(id, req) }
+
+// ---- Reference Data ----
+export async function getVarieties(): Promise<string[]> { return (await ensureApi()).getVarieties() }
 
 // ---- Mock Utilities (only available in mock mode) ----
 export async function resetMockData(): Promise<void> {

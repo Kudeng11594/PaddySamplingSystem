@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import DesktopLayout from '../../layouts/DesktopLayout.vue'
-import { mockUsers } from '../../api/mock/data'
-import type { UserRole } from '../../api/types'
+import { listUsers } from '../../api'
+import type { User, UserRole } from '../../api/types'
 
 const searchKeyword = ref('')
 const roleFilter = ref('')
+
+const allUsers = ref<User[]>([])
+
+onMounted(async () => {
+  const res = await listUsers()
+  allUsers.value = res.items
+})
 
 const roleOptions = [
   { value: '', label: '全部角色' },
@@ -21,7 +28,7 @@ const roleBadgeStyle: Record<UserRole, { bg: string; text: string; label: string
 }
 
 const filtered = computed(() => {
-  let list = [...mockUsers]
+  let list = [...allUsers.value]
   const kw = searchKeyword.value.toLowerCase().trim()
   if (kw) {
     list = list.filter(u => u.username.toLowerCase().includes(kw))

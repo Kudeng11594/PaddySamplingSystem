@@ -1,15 +1,24 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import DesktopLayout from '../../layouts/DesktopLayout.vue'
 import StatusBadge from '../../components/StatusBadge.vue'
-import { mockAppointments } from '../../api/mock/data'
-import { mockVarieties } from '../../api/mock/data'
+import { listAppointments, getVarieties } from '../../api'
+import type { Appointment } from '../../api/types'
 
 const keyword = ref('')
 const statusFilter = ref('')
 const varietyFilter = ref('')
 const page = ref(1)
 const pageSize = 10
+
+const allAppointments = ref<Appointment[]>([])
+const varieties = ref<string[]>([])
+
+onMounted(async () => {
+  const res = await listAppointments({ pageSize: 200 })
+  allAppointments.value = res.items
+  varieties.value = await getVarieties()
+})
 
 const statusOptions = [
   { value: '', label: '全部状态' },
@@ -22,7 +31,7 @@ const statusOptions = [
 ]
 
 const filtered = computed(() => {
-  let list = [...mockAppointments]
+  let list = [...allAppointments.value]
   const kw = keyword.value.toLowerCase().trim()
   if (kw) {
     list = list.filter(
@@ -75,7 +84,7 @@ function resetPage() {
       </select>
       <select v-model="varietyFilter" class="filter-select" @change="resetPage">
         <option value="">全部品种</option>
-        <option v-for="v in mockVarieties" :key="v" :value="v">{{ v }}</option>
+        <option v-for="v in varieties" :key="v" :value="v">{{ v }}</option>
       </select>
     </div>
 

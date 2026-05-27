@@ -1,21 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import MobileLayout from '../../layouts/MobileLayout.vue'
 import StatusBadge from '../../components/StatusBadge.vue'
-import { mockAppointments } from '../../api/mock/data'
+import { listAppointments } from '../../api'
 import type { Appointment } from '../../api/types'
 
 const searchKeyword = ref('')
+const allAppointments = ref<Appointment[]>([])
 const results = ref<Appointment[]>([])
 const searched = ref(false)
+
+onMounted(async () => {
+  const res = await listAppointments({ pageSize: 100 })
+  allAppointments.value = res.items
+})
 
 function handleSearch() {
   searched.value = true
   if (!searchKeyword.value.trim()) {
-    results.value = mockAppointments as unknown as Appointment[]
+    results.value = allAppointments.value
   } else {
     const kw = searchKeyword.value.toLowerCase()
-    results.value = (mockAppointments as Appointment[]).filter(
+    results.value = allAppointments.value.filter(
       a => a.appointmentNo.toLowerCase().includes(kw) ||
            a.licensePlate.toLowerCase().includes(kw) ||
            a.driverName.includes(kw)

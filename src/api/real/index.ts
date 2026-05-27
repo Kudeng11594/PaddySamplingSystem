@@ -1,11 +1,14 @@
 export { login, refresh } from './auth'
+export function getVarieties(): Promise<string[]> {
+  return Promise.resolve(['中科发5', '吉宏6', '鲜食玉米', '杂粮'])
+}
 export {
   createAppointment, queryAppointment, listAppointments, getAppointment,
   assignToken, checkIn, callAppointment, completeSampling,
   cancelAppointment, cancelByDriver, skipAppointment,
 } from './appointment'
 export { getQueue, getMyPosition } from './queue'
-export { getTodayDashboard } from './dashboard'
+export { getTodayDashboard, getDashboardDetail } from './dashboard'
 
 import type { User, CreateUserRequest, ResetPasswordRequest } from '../types'
 

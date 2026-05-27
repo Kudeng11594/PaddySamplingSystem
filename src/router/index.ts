@@ -5,12 +5,12 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/login', component: () => import('../pages/auth/login.vue') },
-    { path: '/driver', component: () => import('../layouts/MobileLayout.vue'), children: [
+    { path: '/driver', component: () => import('../layouts/MobileLayout.vue'), meta: { requiresAuth: true }, children: [
       { path: 'create', component: () => import('../pages/driver/create.vue') },
       { path: 'query', component: () => import('../pages/driver/query.vue') },
       { path: 'queue', component: () => import('../pages/driver/queue.vue') },
     ]},
-    { path: '/manager', component: () => import('../layouts/MobileLayout.vue'), children: [
+    { path: '/manager', component: () => import('../layouts/MobileLayout.vue'), meta: { requiresAuth: true }, children: [
       { path: 'dashboard', component: () => import('../pages/manager/dashboard.vue') },
     ]},
     { path: '/admin', component: () => import('../layouts/DesktopLayout.vue'), meta: { requiresAuth: true }, children: [

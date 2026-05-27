@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import DesktopLayout from '../../layouts/DesktopLayout.vue'
 import AppointmentInfoCard from '../../components/AppointmentInfoCard.vue'
-import { mockAppointments } from '../../api/mock/data'
+import { listAppointments } from '../../api'
 import type { Appointment } from '../../api/types'
 
-const appointments = ref<Appointment[]>(mockAppointments as Appointment[])
+const appointments = ref<Appointment[]>([])
+
+onMounted(async () => {
+  const res = await listAppointments({ pageSize: 200 })
+  appointments.value = res.items
+})
 const selectedId = ref('')
 const selectedAppointment = ref<Appointment | null>(null)
 
