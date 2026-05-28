@@ -11,10 +11,10 @@ interface TimelineStep {
 }
 
 const steps: TimelineStep[] = [
-  { key: 'created', label: '预约成功' },
-  { key: 'arrived', label: '已到厂' },
-  { key: 'queueing', label: '排队中' },
-  { key: 'sampling', label: '扦样中' },
+  { key: 'pending', label: '待取号' },
+  { key: 'token_assigned', label: '已取号' },
+  { key: 'waiting', label: '排队中' },
+  { key: 'called', label: '扦样中' },
   { key: 'completed', label: '已完成' },
 ]
 
@@ -24,6 +24,7 @@ const statusOrder: Record<string, number> = {
   waiting: 2,
   called: 3,
   completed: 4,
+  cancelled: 0,
 }
 
 const currentStepIndex = computed(() => {

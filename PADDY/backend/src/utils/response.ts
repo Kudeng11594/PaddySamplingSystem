@@ -7,7 +7,7 @@ export function success(c: Context, data: any, status: ContentfulStatusCode = 20
 }
 
 export function successMsg(c: Context, message: string = '操作成功') {
-  return c.json({ success: true, message })
+  return c.json({ success: true, data: null, message })
 }
 
 export function successList(c: Context, items: any[], total: number, page: number, pageSize: number) {
@@ -15,5 +15,5 @@ export function successList(c: Context, items: any[], total: number, page: numbe
 }
 
 export function error(c: Context, code: string, message: string, status: ContentfulStatusCode = 400, details?: any) {
-  return c.json({ error: { code, message, ...(details ? { details } : {}) } }, status)
+  return c.json({ success: false, error: { code, message, ...(details ? { details } : {}) } }, status)
 }

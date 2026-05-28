@@ -8,7 +8,7 @@ import dashboardRouter from './routes/dashboard.js'
 import usersRouter from './routes/users.js'
 
 const app = new Hono()
-app.use('*', cors())
+app.use('*', cors({ origin: process.env.CORS_ORIGIN?.split(',') || '*' }))
 app.use('*', errorMiddleware)
 
 app.route('/api/auth', authRouter)
@@ -17,6 +17,6 @@ app.route('/api/queue', queueRouter)
 app.route('/api/dashboard', dashboardRouter)
 app.route('/api/users', usersRouter)
 
-app.get('/api/health', (c) => c.json({ status: 'ok' }))
+app.get('/api/health', (c) => c.json({ success: true, data: { status: 'ok' } }))
 
 export default app

@@ -90,9 +90,10 @@ export function updateStatus(id: string, newStatus: string, extra: Record<string
   if (extra.cancelledAt !== undefined) { updates.push('cancelledAt = ?'); values.push(extra.cancelledAt) }
   if (extra.cancelReason !== undefined) { updates.push('cancelReason = ?'); values.push(extra.cancelReason) }
   if (extra.cancelBy !== undefined) { updates.push('cancelBy = ?'); values.push(extra.cancelBy) }
-  values.push(id)
-  db.prepare(`UPDATE appointments SET ${updates.join(', ')} WHERE id = ?`).run(...values)
-  return db.prepare('SELECT * FROM appointments WHERE id = ?').get(id)
+  values.push(appt.status, id)
+  const result = db.prepare(`UPDATE appointments SET ${updates.join(', ')} WHERE status = ? AND id = ?`).run(...values)
+  if (result.changes === 0) return { error: 'CONCURRENT_MODIFICATION', currentStatus: appt.status }
+  return db.prepare('SELECT * FROM appointments WHERE id = ?').get(appt.id)
 }
 
 export function getCallNextAppointment(): any | null {

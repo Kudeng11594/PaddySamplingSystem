@@ -30,6 +30,7 @@ export function initSchema(): void {
       username TEXT UNIQUE NOT NULL,
       password TEXT NOT NULL,
       role TEXT NOT NULL DEFAULT 'operator',
+      tokenVersion INTEGER NOT NULL DEFAULT 1,
       createdAt TEXT NOT NULL DEFAULT (datetime('now'))
     );
     CREATE TABLE IF NOT EXISTS counters (
@@ -42,6 +43,8 @@ export function initSchema(): void {
     CREATE INDEX IF NOT EXISTS idx_appointments_no ON appointments(appointmentNo);
     CREATE INDEX IF NOT EXISTS idx_appointments_phone ON appointments(phone);
   `)
+  // Migrate existing databases that lack tokenVersion
+  try { db.exec('ALTER TABLE users ADD COLUMN tokenVersion INTEGER NOT NULL DEFAULT 1') } catch { /* already exists */ }
 }
 
 export function seedDefaultUsers(): void {
@@ -50,6 +53,6 @@ export function seedDefaultUsers(): void {
   if (existing.count > 0) return
   const hash = bcrypt.hashSync('admin123', 10)
   const id = crypto.randomUUID()
-  db.prepare('INSERT INTO users (id, username, password, role) VALUES (?, ?, ?, ?)').run(id, 'admin', hash, 'admin')
-  console.log('Default admin user created (admin / admin123)')
+  db.prepare('INSERT INTO users (id, username, password, role, tokenVersion) VALUES (?, ?, ?, ?, 1)').run(id, 'admin', hash, 'admin')
+  console.log('Default admin user created — change password immediately')
 }

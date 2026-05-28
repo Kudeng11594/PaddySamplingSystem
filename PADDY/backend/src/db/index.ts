@@ -18,3 +18,12 @@ export function getDb(): Database.Database {
   }
   return db
 }
+
+export function closeDb(): void {
+  if (db) { db.close(); db = undefined as any }
+}
+
+export function useDb(instance: Database.Database): void {
+  if (db) db.close()
+  db = instance
+}

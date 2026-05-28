@@ -22,7 +22,7 @@ router.post('/', async (c) => {
 router.delete('/:id', async (c) => {
   const ok = userService.deleteUser(c.req.param('id'))
   if (!ok) return error(c, 'NOT_FOUND', '用户不存在', 404)
-  return successMsg(c, '用户已删除')
+  return c.body(null, 204)
 })
 
 router.post('/:id/reset-password', async (c) => {

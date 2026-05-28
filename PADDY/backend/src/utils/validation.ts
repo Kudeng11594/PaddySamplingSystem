@@ -42,9 +42,14 @@ export function validateRole(role: string): string | null {
   return ROLES.includes(role) ? null : '角色无效'
 }
 
+export function validateDriverName(name: string): string | null {
+  return name && name.trim().length > 0 && name.length <= 50 ? null : '司机姓名不能为空且不超过50字'
+}
+
 export function validateAppointmentInput(data: any): ValidationError[] {
   const errors: ValidationError[] = []
   const checks: [string, any, (v: any) => string | null][] = [
+    ['driverName', data.driverName, validateDriverName],
     ['phone', data.phone, validatePhone],
     ['licensePlate', data.licensePlate, validateLicensePlate],
     ['variety', data.variety, validateVariety],

@@ -1,8 +1,9 @@
 import { Hono } from 'hono'
 import { authMiddleware, roleGuard } from '../middleware/auth.js'
-import { success, successList, successMsg, error } from '../utils/response.js'
+import { success, successList, error } from '../utils/response.js'
 import { validateAppointmentInput, validateMoisture, validateRiceYield } from '../utils/validation.js'
 import * as svc from '../services/appointment.js'
+import { getDb } from '../db/index.js'
 
 const router = new Hono()
 
@@ -96,7 +97,6 @@ router.post('/:id/skip', roleGuard('operator', 'admin'), async (c) => {
   const id = c.req.param('id')!; const appt = svc.getAppointmentById(id)
   if (!appt) return error(c, 'NOT_FOUND', '预约不存在', 404)
   if ((appt as any).status !== 'waiting') return error(c, 'INVALID_STATUS', '只有等待中的预约可以跳过', 409)
-  const { getDb } = await import('../db/index.js')
   getDb().prepare('UPDATE appointments SET queuedAt = ? WHERE id = ?').run(new Date().toISOString(), id)
   return success(c, { ...svc.getAppointmentById(id), message: '已移至队尾' })
 })
