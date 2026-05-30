@@ -1,0 +1,66 @@
+:root {
+  /* Primary */
+  --color-primary: #FF6600;
+  --color-primary-hover: #e65c00;
+  --color-primary-active: #cc5200;
+  --color-primary-light: #fff3e0;
+
+  /* Backgrounds */
+  --color-bg: #fefbfb;
+  --color-surface: #ffffff;
+  --color-border: #eeeeee;
+  --color-border-light: #f0f0f0;
+
+  /* Text */
+  --color-text: #333333;
+  --color-text-secondary: #666666;
+  --color-text-muted: #888888;
+  --color-text-placeholder: #999999;
+
+  /* Status badges — completed */
+  --color-status-completed-bg: #e8f5e9;
+  --color-status-completed-text: #2e7d32;
+  --color-status-queueing-bg: #e3f2fd;
+  --color-status-queueing-text: #1565c0;
+  --color-status-waiting-bg: #fff3e0;
+  --color-status-waiting-text: #e65100;
+  --color-status-cancelled-bg: #f5f5f5;
+  --color-status-cancelled-text: #999999;
+  --color-status-sampling-bg: #fff3e0;
+  --color-status-sampling-text: #e65100;
+
+  /* Role badges */
+  --color-role-admin-bg: #fff3e0;
+  --color-role-admin-text: #e65100;
+  --color-role-operator-bg: #e3f2fd;
+  --color-role-operator-text: #1565c0;
+  --color-role-manager-bg: #f3e5f5;
+  --color-role-manager-text: #7b1fa2;
+
+  /* Online status */
+  --color-online-bg: #e8f5e9;
+  --color-online-text: #2e7d32;
+  --color-offline-bg: #f5f5f5;
+  --color-offline-text: #999999;
+
+  /* Semantic */
+  --color-danger: #e53935;
+  --color-success: #4caf50;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+}

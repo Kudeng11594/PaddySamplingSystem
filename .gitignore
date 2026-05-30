@@ -1,4 +1,35 @@
-node_modules/
-dist/
-.env
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+.DS_Store
+dist
+*.local
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Paddy project
 .worktrees/
+.envcoverage/
+
+# Tool-generated directories
+.agents/
+.superpowers/
+coverage/
+.gstack/
+.claude/
+
+# QA artifacts
+qa-screenshots/

@@ -1,0 +1,7 @@
+:root {
+  --color-primary: #FF6600;
+  --color-primary-light: #ff944d;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 1.25rem;
+}
