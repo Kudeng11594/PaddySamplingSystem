@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.2.0.0] - 2026-05-30
+
+### Added
+
+- Hono + SQLite backend with full REST API (auth, appointments, queue, dashboard, users)
+- JWT authentication with access/refresh token rotation and tokenVersion leak detection
+- Backend test suite: 58 tests across 4 files (validation, appointments, auth, dashboard)
+- Dashboard detail endpoint with daily trends, variety distribution, peak hours, pass rate
+
+### Fixed
+
+- DELETE `/api/users/:id` returns HTTP 204 instead of 200
+- Refresh token rotation now invalidates leaked tokens after legitimate use
+- Added missing backend `/api/dashboard/detail` route for frontend compatibility
+- Removed obsolete Tailwind CSS reference from PRD
+
 ## [0.1.0.0] - 2026-05-27
 
 ### Added

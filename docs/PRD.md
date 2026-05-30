@@ -208,7 +208,8 @@ cancelled       →   预约已取消（司机或管理员操作）
 
 | 层 | 技术 |
 |----|------|
-| 前端框架 | uniapp + Vue 3 + TypeScript + Vite+Tailwind CSS |
+| 前端框架 | uniapp + Vue 3 + TypeScript + Vite+
+ |
 | 样式 | CSS 变量主题 + Tailwind CSS（变量 → 语义化 class 映射） |
 | 后端服务 | Hono + SQLite |
 | 测试 | Vitest （Mock 层单元测试） |
